@@ -15,8 +15,15 @@
 				<br><br>
 			</div>
 			<h2>RECENT TRANSACTIONS</h2>
-
+			<table class="table table-responsive" id="transactions-table">
 				{% for key, total in table_contents.items %}
+				<tr id="headerRow">
+					<th>Date</th>
+					<th>Type</th>
+					<th>Description</th>
+					<th>Amount</th>
+					<th>Balance</th>
+				</tr>
 				<tr>
 					<td class="center">{{ key.date }}</td>
 					<td class="center">{{ key.type }}</td>
@@ -24,5 +31,6 @@
 					<td class="right">{{ key.amount }}</td>
 					<td class="right">{{ total }}</td>
 				</tr>
+			</table>
 				{% endfor %}
 {% endblock %}
